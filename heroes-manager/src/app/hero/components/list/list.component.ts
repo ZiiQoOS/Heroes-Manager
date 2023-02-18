@@ -20,6 +20,7 @@ export class ListComponent {
   public dataSource!: MatTableDataSource<any>;
   public displayedColumns: string[] = ['name', 'powers', 'rate'];
   public heroes$!: Observable<any>;
+  public totalPageNumber: number = 0;
   public isLoadingResults: boolean = true;
   public orderBy: FormControl = new FormControl(true);
   public pageNumber: number = 1;
@@ -51,6 +52,7 @@ export class ListComponent {
     ).subscribe(
       {
         next: (data) => {
+          this.totalPageNumber = Math.ceil(data.data.heroesCount/5);
           this.dataSource = new MatTableDataSource<any>(data.data.heros as any);
           this.isLoadingResults = false;
         },

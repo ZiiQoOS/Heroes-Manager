@@ -1,3 +1,4 @@
+const Hero = require('../Models/Hero.model');
 const HeroesService = require('../Services/Heroes.service');
 const RatingsService = require('../Services/Ratings.service');
 
@@ -5,10 +6,9 @@ const RatingsService = require('../Services/Ratings.service');
 exports.getHeroes = async (req, res, next) => {
   try {
     const { page = 1, limit = 5, orderBy = 'name' } = req.query;
-    const heroes = await HeroesService.findHeroes(page, limit, orderBy, req.user.user_id);
-
+    const heroes = await HeroesService.findHeroes(page, limit, orderBy);
+    const heroesCount = await Hero.countDocuments();
     const heroesWithRatings = heroes.map((hero) => {
-
       return {
         _id: hero._id,
         name: hero.name,
@@ -18,9 +18,7 @@ exports.getHeroes = async (req, res, next) => {
         rating: hero.ratings.find((rating) => remvoeExtraStringFromId(rating.user._id) === req.user.user_id)?.value || 0
       }
     });
-
-
-    res.status(200).send(heroesWithRatings);
+    res.status(200).send({ heroesWithRatings, heroesCount });
   } catch (err) {
     next(err);
   }

@@ -9,7 +9,7 @@ export const loadHeroes = createAction(
 
 export const loadHeroesSuccess = createAction(
   '[HEROES] LOAD_HEROES_SUCCESS',
-  props<{ data: { heros: HeroListType } }>()
+  props<{ data: { heros: HeroListType, heroesCount: number } }>()
 );
 
 export const loadHeroesFailed = createAction(

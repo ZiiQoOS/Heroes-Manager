@@ -57,7 +57,8 @@
         matTooltipPosition="above">
         <mat-icon>add_circle</mat-icon>
       </button>
-      <button mat-fab color="#c8ffd8" (click)="onNextPage()" matTooltip="Next page" matTooltipPosition="above">
+      <button mat-fab color="#c8ffd8" (click)="onNextPage()" matTooltip="Next page" matTooltipPosition="above"
+      [disabled]="pageNumber >= totalPageNumber">
         <mat-icon>navigate_next</mat-icon>
       </button>
     </div>

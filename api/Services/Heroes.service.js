@@ -5,7 +5,7 @@ const Rating = require("../Models/Rating.model");
 
 class HeroessService {
 
-  static async findHeroes(page, limit, orderBy, authUserId) {
+  static async findHeroes(page, limit, orderBy) {
     const heroes = Hero.find()
       .populate({
         path: 'ratings',

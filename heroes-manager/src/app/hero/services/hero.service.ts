@@ -22,7 +22,7 @@ export class HeroService {
     return this.httpClient.post(`heroes-manager/api/${this.BASIC_PATH}`, hero, true);
   }
 
-  getHeroes(page: number, orderBy: string): Observable<HeroListPaginationType> {
+  getHeroes(page: number, orderBy: string): Observable<{ heroesWithRatings: HeroListPaginationType, heroesCount: number }> {
     return this.httpClient.get(
       `${this.BASIC_PATH}`, true, { page, orderBy }
     );

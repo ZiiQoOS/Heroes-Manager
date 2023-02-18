@@ -48,7 +48,7 @@ export class HeroesEffects {
     map((action) => action.data),
     switchMap((params) => this.heroService.getHeroes(params.page, params.orderBy)),
     map(response => {
-      return HeroesActions.loadHeroesSuccess({ data: { heros: (response as any) } });
+      return HeroesActions.loadHeroesSuccess({ data: { heros: (response as any).heroesWithRatings, heroesCount: (response as any).heroesCount } });
     }),
     catchError(err => {
       this.store.dispatch(HeroesActions.loadHeroesFailed());
