@@ -1,0 +1,51 @@
+<form [formGroup]="form" class="hero-form">
+  <div class="hero-info img-container">
+    <img src="../../../../assets/images/flash.png" alt="Placeholder">
+  </div>
+  <!-- Hero Name -->
+  <div class="hero-info">
+    <input type="text" matInput class="hero-inputs" placeholder="Hero Name" formControlName="name">
+    <mat-error class="error-message"
+      *ngIf="form.get('name')?.touched && form.get('name')?.hasError('required')">Required</mat-error>
+    <mat-error class="error-message" *ngIf="form.get('name')?.touched && form.get('name')?.hasError('maxLength')">Max
+      length is
+      255</mat-error>
+  </div>
+
+  <!-- Hero  Description -->
+  <div class="hero-info">
+    <input type="text" class="hero-inputs" matInput placeholder="Hero Description"
+      formControlName="description">
+    <mat-error class="error-message"
+      *ngIf="form.get('description')?.touched && form.get('description')?.hasError('maxLength')">
+      Max length is 500
+    </mat-error>
+  </div>
+
+  <!-- Hero  Powers -->
+  <div class="hero-info">
+    <mat-chip-grid #chipGrid formControlName="powers">
+      <mat-chip-row *ngFor="let keyword of keywords" (removed)="removeKeyword(keyword)">
+        {{keyword}}
+        <button matChipRemove>
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </mat-chip-row>
+    </mat-chip-grid>
+    <input [ngClass]="{'cdk-visually-hidden': readOnly}" class="power-input" placeholder="Hero Powers"
+      [matChipInputFor]="chipGrid" (matChipInputTokenEnd)="add($event)" />
+    <mat-error class="error-message"
+      *ngIf="form.get('powers')?.touched && form.get('powers')?.hasError('required')">Required</mat-error>
+    <mat-error class="error-message" *ngIf="form.get('powers')?.touched && form.get('powers')?.hasError('maxLength')">
+      Max length is 255</mat-error>
+  </div>
+</form>
+
+<div *ngIf="!readOnly" class="action-buttons-container">
+  <button mat-raised-button color="#c8ffd8" (click)="addHero()">Add 🔥</button>
+  <button mat-raised-button color="warn" (click)="closeDialog()">Cancel</button>
+</div>
+<!-- 
+<p>
+  <b>form.value:</b> {{form.value | json}}
+</p> -->

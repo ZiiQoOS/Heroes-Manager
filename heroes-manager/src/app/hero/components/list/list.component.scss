@@ -1,0 +1,69 @@
+.form-group {
+  margin-left: 250px;
+}
+
+.mat-mdc-slide-toggle.filter-toggle.mat-primary {
+  --mdc-switch-selected-focus-state-layer-color: #ff6666;
+  --mdc-switch-selected-handle-color: #ff6666;
+  --mdc-switch-selected-hover-state-layer-color: #ff6666;
+  --mdc-switch-selected-pressed-state-layer-color: #ff6666;
+  --mdc-switch-selected-focus-handle-color: #ee2727;
+  --mdc-switch-selected-hover-handle-color: #ee2727;
+  --mdc-switch-selected-pressed-handle-color: #ee2727;
+  --mdc-switch-selected-focus-track-color: #f8b0b0;
+  --mdc-switch-selected-hover-track-color: #f8b0b0;
+  --mdc-switch-selected-pressed-track-color: #f8b0b0;
+  --mdc-switch-selected-track-color: #f8b0b0;
+}
+
+.table-container {
+  width: 80% !important;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.pagination-container {
+  margin: auto;
+  display: flex;
+  place-content: space-evenly;
+  padding-bottom: 15px;
+}
+
+.toggle-container {
+  margin: auto;
+  margin-top: 5px;
+  font-family: Poppins;
+}
+
+.example-loading-shade {
+  position: absolute;
+  top: 250px;
+  left: 106px;
+  bottom: 91px;
+  right: 106px;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+::ng-deep .mat-mdc-slide-toggle .mdc-switch .mdc-switch__track {
+  border-radius: var(--mdc-switch-track-shape, 37px) !important;
+}
+
+::ng-deep .mat-mdc-slide-toggle .mdc-switch .mdc-switch__track {
+  height: var(--mdc-switch-track-height, 26px) !important;
+}
+
+::ng-deep .mat-mdc-slide-toggle .mdc-switch {
+  width: var(--mdc-switch-track-width, 46px) !important;
+}
+
+::ng-deep .mdc-switch__icons {
+  display: none !important;
+}
+
+.pointer-cursor {
+  cursor: pointer;
+}

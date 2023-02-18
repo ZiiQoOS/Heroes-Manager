@@ -8,15 +8,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent implements OnInit {
 
-  title = 'heroes-manager';
-  itWorksMsg: Object = {};
+  title = 'Heroes Manager';
   constructor(private httpClient: HttpClient) {
 
   }
   ngOnInit() {
-    this.httpClient.get('http://localhost:3000').subscribe((value) => {
-      this.itWorksMsg = value;
-    })
+   
 
   }
 

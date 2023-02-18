@@ -1,0 +1,1 @@
+export * as HeroTypes from './index';
