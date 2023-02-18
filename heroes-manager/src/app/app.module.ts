@@ -8,6 +8,10 @@ import { EffectsModule } from '@ngrx/effects';
 import { EnhancedHttpClientService } from './services/enhanced-http-client.service';
 import { environment } from 'src/environments/environment';
 import { HttpClientModule } from '@angular/common/http';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { NavbarComponent } from './common/navbar/navbar.component';
 import { reducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -29,6 +33,10 @@ function initApp(http: EnhancedHttpClientService) {
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatMenuModule,
     BrowserAnimationsModule,
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([]),

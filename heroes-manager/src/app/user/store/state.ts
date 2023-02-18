@@ -17,9 +17,6 @@ const selectAuthState = createFeatureSelector<IUserState>("user");
 
 export const isLoggedIn = createSelector(selectAuthState, (state) => state.login);
 
-export const userFullName = createSelector(selectAuthState, (state) => state.login ? `${state.user?.firstName} ${state.user?.lastName}` : '');
+export const userName = createSelector(selectAuthState, (state) => state.login ? `${state.user?.firstName.charAt(0).toLocaleUpperCase()}.${state.user?.lastName.toLocaleUpperCase()}` : '');
 
-export const userId = createSelector(selectAuthState, (state) => {
-  console.log('state', state);
-  return state.user?._id;
-});
+export const userId = createSelector(selectAuthState, (state) => state.user?._id);

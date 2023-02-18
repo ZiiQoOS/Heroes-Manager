@@ -2,15 +2,15 @@ version: '3.0' # specify docker-compose version
 # Define the services/containers to be run
 services:
   angular:
-    # hostname: localhost
-    # #container_name: heroes-manager
-    # build: heroes-manager
-    image: registry.gitlab.com/group18344106/heroesmanager:1.1 # set the image registry path if available
+    hostname: localhost
+    container_name: heroes-manager
+    build: heroes-manager
+    # image: registry.gitlab.com/group18344106/heroesmanager:1.1 # set the image registry path if available
     ports:
       - 8181:80 # Forward the 8181 host port to 80 container port.
   express: #name of the second service
-    image: registry.gitlab.com/group18344106/heroesmanagerapi:1.0
-    # build: api # specify the directory of the Dockerfile
+    # image: registry.gitlab.com/group18344106/heroesmanagerapi:1.0
+    build: api # specify the directory of the Dockerfile
     ports:
       - "3000:3000" #specify ports forewarding
   mongo:

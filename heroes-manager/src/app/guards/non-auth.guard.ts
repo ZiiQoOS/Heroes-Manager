@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
-import { select, Store } from '@ngrx/store';
+import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
+import { select, Store } from '@ngrx/store';
 import { UserState } from '../user/store';
 
 @Injectable({
@@ -20,7 +20,6 @@ export class NonAuthGuard implements CanActivate {
     return this.store.pipe(
       select(UserState.isLoggedIn),
       map(isLoggedIn => {
-        console.log('isLoggedIn', isLoggedIn);
         if (isLoggedIn) {
           this.router.navigate(['/hero/list']);
         }

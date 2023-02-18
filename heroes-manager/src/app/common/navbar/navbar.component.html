@@ -1,1 +1,13 @@
-<p>navbar works!</p>
+<mat-toolbar color="warn" class="navbar-main">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <img src="../../../assets/images/logo_2.png" routerLink="/hero/list">
+  </button>
+  <span>
+    <b>Heroes Manager</b>
+  </span>
+  <span class="example-spacer"></span>
+  <button *ngIf="userName" mat-button [matMenuTriggerFor]="menu" class="menu-button">{{userName}}</button>
+  <mat-menu color="warn" #menu="matMenu">
+    <button mat-menu-item color="warn" (click)="logoOut()">Log out</button>
+  </mat-menu>
+</mat-toolbar>
