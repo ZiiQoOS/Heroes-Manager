@@ -60,9 +60,10 @@ The ready-to-use features are:
 
 `git clone https://github.com/ZiiQoOS/Heroes-Manager.git`
 
+3. Rename the `api/.env.example` to `.env` and populate the file with your environment's informations. 
 
-3. Move to the Heroes-Manager folder and run command : 
+4. Move to the Heroes-Manager folder and run command : 
 
 `docker-compose up`
 
-4. The app is launched on http://localhost:8181
+5. The app is launched on http://localhost:8181
