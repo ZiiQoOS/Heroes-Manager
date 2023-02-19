@@ -8,8 +8,8 @@
 ## Table of Contents
 * [Main Technologies](#main-technologies)
 * [Features](#features)
-* [Screenshots](#screenshots)
 * [Setup](#setup)
+* [Screenshots](#screenshots)
 
 
 ## Main Technologies
@@ -33,7 +33,7 @@ The ready-to-use features are:
 - List all heroes in the HR department.
 - Sort heroes by name or powers.
 - Search for heroes by name or powers.
-- Add and display a new hero.
+- Add and view a new hero.
 - Rate heroes.
 
 ## Setup
@@ -45,13 +45,13 @@ The ready-to-use features are:
        git clone https://github.com/ZiiQoOS/Heroes-Manager.git
 
 3. Rename the `api/.env.example` to `.env` and populate the file with your environment's informations. 
-    - The API_ACCESS_TOKEN is just an example, you **MUST** generate your own token.
+    - The ***API_ACCESS_TOKEN*** is just an example for testing purposes, you **MUST** generate your own strong token.
     - Tip : you can use the following native JS function `require('crypto').randomBytes(64).toString('hex')` or any other hashing function.
-4. Move to the Heroes-Manager folder and run command : 
+4. Change to directory ***Heroes-Manager*** and run command : 
 
        docker-compose up
 
-5. The app is launched on http://localhost:8181
+5. The app is launched on : http://localhost:8181
 ## Screenshots
 - **Login Page**
 
