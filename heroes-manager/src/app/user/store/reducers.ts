@@ -1,10 +1,10 @@
-import { UserState, UserActions } from ".";
-import { createReducer, on } from "@ngrx/store";
+import { createReducer, on } from '@ngrx/store';
+import { UserActions, UserState } from '.';
 
 
 export const userReducer = createReducer(
   UserState.initialUserState,
-  on(UserActions.updateUsersStore, (state, action) => {
+  on(UserActions.setUserState, (state, action) => {
     const stateCopy = JSON.parse(JSON.stringify(state));
     stateCopy.login = action.data.login;
     stateCopy.user = action.data.user;

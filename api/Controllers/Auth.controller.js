@@ -70,7 +70,10 @@ exports.login = async (req, res, next) => {
       res.status(200).json(user);
     }
     else {
-      res.status(400).send("Invalid Credentials");
+      res.status(401).json({
+        code: "MSG_401",
+        message: "Invalid Credentials"
+      });
     }
   } catch (err) {
     console.log(err);

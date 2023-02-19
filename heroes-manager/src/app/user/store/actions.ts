@@ -1,9 +1,9 @@
-import { createAction, props } from "@ngrx/store";
-import { UserState } from ".";
+import { createAction, props } from '@ngrx/store';
+import { UserState } from '.';
 
 
-export const updateUsersStore = createAction(
-  '[Users] UPDATE_STORE',
+export const setUserState = createAction(
+  '[Users] SET_USER_STATE',
   props<{ data: UserState.IUserState }>()
 );
 

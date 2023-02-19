@@ -46,7 +46,7 @@ export class RegisterComponent {
         const date = new Date();
         date.setDate(date.getDate() + 7);
         this.cookieService.set(this.ACCESS_TOKEN_KEY, data.token, date, '/');
-        this.store.dispatch(UserActions.updateUsersStore({ data: { login: true, user: data.user } }));
+        this.store.dispatch(UserActions.setUserState({ data: { login: true, user: data.user } }));
         this.router.navigate(['/hero/list']);
       },
       error => this.generalError = true

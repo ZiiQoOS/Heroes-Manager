@@ -29,5 +29,5 @@ app.use(API_BASE_URL, usersRoutes);
 
 // Launch the app
 app.listen(API_PORT, () => {
-  console.log(`Example app listening on port ${API_PORT}...`)
+  console.log(`Heroes Manager API listening on port ${API_PORT} ...`)
 })

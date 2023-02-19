@@ -1,9 +1,9 @@
-import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { environment } from 'src/environments/environment';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import { UserActions } from '../../store';
@@ -15,11 +15,9 @@ import { UserActions } from '../../store';
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
-  public form: FormGroup = new FormGroup({});
   public ACCESS_TOKEN_KEY = environment.ACCESS_TOKEN_KEY;
-
-  errorMsg: string = '';
-  isPosting: boolean = false;
+  public form: FormGroup = new FormGroup({});
+  public invalidCredentials: any ;
 
   private subs: Subscription = new Subscription();
 
@@ -44,14 +42,18 @@ export class LoginComponent implements OnInit, OnDestroy {
     }
 
     this.authService.login(this.form.value).subscribe(
-      data => {
-        const date = new Date();
-        date.setDate(date.getDate() + 7);
-        this.cookieService.set(this.ACCESS_TOKEN_KEY, data.token, date, '/');
-        this.store.dispatch(UserActions.updateUsersStore({ data: { login: true, user: (data as any)} }));
-        this.router.navigate(['/hero/list']);
-      },
-      error => console.log(error)
+      {
+        next: (data) => {
+          const expirationDate = new Date();
+          expirationDate.setDate(expirationDate.getDate() + 30);
+          this.cookieService.set(this.ACCESS_TOKEN_KEY, data.token, expirationDate, '/');
+          this.store.dispatch(UserActions.setUserState({ data: { login: true, user: (data as any) } }));
+          this.router.navigate(['/hero/list']);
+        },
+        error: () => {
+          this.invalidCredentials = true;
+        }
+      }
     );
   }
 
