@@ -1,7 +1,7 @@
 # Heroes Manager
 ## Context
 
-> The United Nations Super Heroes Fund is an employment agency for heroes , this project is simple web app to help them manage their HR department.
+> The United Nations Super Heroes Fund is an employment agency for heroes , this project is a simple web app to help them manage their HR department.
 
 > This is a Full-Stack engineer position challenge in https://elham.sa
 
@@ -56,12 +56,12 @@ The ready-to-use features are:
 ## Setup
 1. To run the project in your local environment, you need to install :
     - Docker & Docker compose
-2. Clone the repository from Github or download the zip file, use command : 
+2. Clone the repository from Github, use command : (you can also download the zip file of the repo)
 
 `git clone https://github.com/ZiiQoOS/Heroes-Manager.git`
 
 3. Rename the `api/.env.example` to `.env` and populate the file with your environment's informations. 
-
+    - The API_ACCESS_TOKEN is just an example, you MUST generate your own token.(you can use the following native Js function `require('crypto').randomBytes(64).toString('hex')` or any other hashing function)
 4. Move to the Heroes-Manager folder and run command : 
 
 `docker-compose up`
