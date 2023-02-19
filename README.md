@@ -35,6 +35,21 @@ The ready-to-use features are:
 - Search for heroes by name or powers.
 - Add and display a new hero.
 - Rate heroes.
+
+## Setup
+1. To run the project in your local environment, you need to install :
+    - Docker & Docker compose
+2. Clone the repository from Github, use command : (you can also download the zip file of the repo)
+
+`git clone https://github.com/ZiiQoOS/Heroes-Manager.git`
+
+3. Rename the `api/.env.example` to `.env` and populate the file with your environment's informations. 
+    - The API_ACCESS_TOKEN is just an example, you MUST generate your own token.(you can use the following native Js function `require('crypto').randomBytes(64).toString('hex')` or any other hashing function)
+4. Move to the Heroes-Manager folder and run command : 
+
+`docker-compose up`
+
+5. The app is launched on http://localhost:8181
 ## Screenshots
 - **Login Page**
 
@@ -53,17 +68,3 @@ The ready-to-use features are:
 - **Hero Profile View Page**
 
 ![Example screenshot](./screenshots/Hero%20View.png)
-## Setup
-1. To run the project in your local environment, you need to install :
-    - Docker & Docker compose
-2. Clone the repository from Github, use command : (you can also download the zip file of the repo)
-
-`git clone https://github.com/ZiiQoOS/Heroes-Manager.git`
-
-3. Rename the `api/.env.example` to `.env` and populate the file with your environment's informations. 
-    - The API_ACCESS_TOKEN is just an example, you MUST generate your own token.(you can use the following native Js function `require('crypto').randomBytes(64).toString('hex')` or any other hashing function)
-4. Move to the Heroes-Manager folder and run command : 
-
-`docker-compose up`
-
-5. The app is launched on http://localhost:8181
