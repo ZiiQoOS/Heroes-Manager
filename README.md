@@ -3,6 +3,8 @@
 
 > The United Nations Super Heroes Fund is an employment agency for heroes , this project is simple web app to help them manage their HR depatment.
 
+> This is a Full-Stack engineer position challenge in https://elham.sa
+
 ## Table of Contents
 * [Main Technologies](#technologies-used)
 * [Features](#features)
@@ -25,7 +27,7 @@
   - [Docker](https://www.docker.com/) - v4.16
 
 ## Features
-The ready features are:
+The ready-to-use features are:
 - Create and log into a personal account.
 - List all heroes in the depatment.
 - Sort heroes by name or powers.
