@@ -6,7 +6,7 @@
 > This is a Full-Stack engineer position challenge in https://elham.sa
 
 ## Table of Contents
-* [Main Technologies](#technologies-used)
+* [Main Technologies](#main-technologies)
 * [Features](#features)
 * [Screenshots](#screenshots)
 * [Setup](#setup)
@@ -44,7 +44,8 @@ The ready-to-use features are:
 `git clone https://github.com/ZiiQoOS/Heroes-Manager.git`
 
 3. Rename the `api/.env.example` to `.env` and populate the file with your environment's informations. 
-    - The API_ACCESS_TOKEN is just an example, you MUST generate your own token.(you can use the following native Js function `require('crypto').randomBytes(64).toString('hex')` or any other hashing function)
+    - The API_ACCESS_TOKEN is just an example, you **MUST** generate your own token.
+    - Tip : you can use the following native JS function `require('crypto').randomBytes(64).toString('hex')` or any other hashing function.
 4. Move to the Heroes-Manager folder and run command : 
 
 `docker-compose up`
