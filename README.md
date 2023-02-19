@@ -1,7 +1,7 @@
 # Heroes Manager
 ## Context
 
-> The United Nations Super Heroes Fund is an employment agency for heroes , this project is simple web app to help them manage their HR depatment.
+> The United Nations Super Heroes Fund is an employment agency for heroes , this project is simple web app to help them manage their HR department.
 
 > This is a Full-Stack engineer position challenge in https://elham.sa
 
@@ -29,7 +29,7 @@
 ## Features
 The ready-to-use features are:
 - Create and log into a personal account.
-- List all heroes in the depatment.
+- List all heroes in the HR department.
 - Sort heroes by name or powers.
 - Search for heroes by name or powers.
 - Add and display a new hero.
