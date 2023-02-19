@@ -14,7 +14,6 @@ import { UserActions } from '../../store';
 })
 export class RegisterComponent {
   public form: FormGroup = new FormGroup({});
-  public generalError: boolean = false;
   public ACCESS_TOKEN_KEY = environment.ACCESS_TOKEN_KEY;
 
 
@@ -40,16 +39,18 @@ export class RegisterComponent {
       return;
     }
 
-    this.generalError = false;
     this.authService.signup(this.form.value).subscribe(
       data => {
         const date = new Date();
         date.setDate(date.getDate() + 7);
         this.cookieService.set(this.ACCESS_TOKEN_KEY, data.token, date, '/');
-        this.store.dispatch(UserActions.setUserState({ data: { login: true, user: data.user } }));
+        this.store.dispatch(UserActions.setUserState({ data: { login: true, user: (data as any) } }));
         this.router.navigate(['/hero/list']);
       },
-      error => this.generalError = true
+      error => {
+        console.log(error);
+        
+      }
     );
   }
 

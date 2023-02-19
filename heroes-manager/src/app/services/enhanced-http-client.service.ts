@@ -67,7 +67,7 @@ export class EnhancedHttpClientService {
       if (token) {
         const init_rsp = await firstValueFrom(this.post(`heroes-manager/api/verify-token`, {
           token
-        }));
+        }));      
         this.store.dispatch(UserActions.setUserState({ data: { login: true, user: init_rsp.user } }));
       }
     } catch (error: any) {

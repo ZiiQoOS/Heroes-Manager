@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node app.js",
+    "startProd": "NODE_ENV=production node app.js",
     "startLocal": "nodemon app.js"
   },
   "dependencies": {
