@@ -1,14 +1,16 @@
 # Heroes Manager
+## Context
+
 > The United Nations Super Heroes Fund is an employment agency for heroes , this project is simple web app to help them manage their HR depatment.
 
 ## Table of Contents
-* [Technologies Used](#technologies-used)
+* [Main Technologies](#technologies-used)
 * [Features](#features)
 * [Screenshots](#screenshots)
 * [Setup](#setup)
 
 
-## Technologies Used
+## Main Technologies
 - Front-end
   - [Angular](https://angular.io/) - v15.1
   - [Angular Material](https://material.angular.io/) - v15.1
