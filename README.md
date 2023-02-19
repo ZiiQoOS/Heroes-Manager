@@ -24,6 +24,7 @@
   - [Mongo](https://www.mongodb.com/) - v4
   - [Mongoose](https://expressjs.com/) - v6.9
 - Build and Deployment
+  - [Nginx](https://www.nginx.com/) - v1.22
   - [Docker](https://www.docker.com/) - v4.16
 
 ## Features
