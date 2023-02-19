@@ -14,15 +14,15 @@
 
 ## Main Technologies
 - Front-end
-  - [Angular](https://angular.io/) - v15.1
-  - [Angular Material](https://material.angular.io/) - v15.1
-  - [RxJS](https://rxjs.dev/) - v7.8
-  - [NgRx](https://ngrx.io/) - v15.3
+  - [Angular](https://angular.io) - v15.1
+  - [Angular Material](https://material.angular.io) - v15.1
+  - [RxJS](https://rxjs.dev) - v7.8
+  - [NgRx](https://ngrx.io) - v15.3
 - Back-end
-  - [Node.js](https://nodejs.org/) - v19.6
-  - [Express](https://expressjs.com/) - v4.16
-  - [Mongo](https://www.mongodb.com/) - v4
-  - [Mongoose](https://expressjs.com/) - v6.9
+  - [Node.js](https://nodejs.org) - v19.6
+  - [Express](https://expressjs.com) - v4.16
+  - [Mongo](https://www.mongodb.com) - v4
+  - [Mongoose](https://mongoosejs.com) - v6.9
 - Build and Deployment
   - [Nginx](https://www.nginx.com/) - v1.22
   - [Docker](https://www.docker.com/) - v4.16
